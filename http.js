@@ -1,20 +1,17 @@
+
 const http = require('http');
 
 const server = http.createServer((req,res)=>{
 if(req.url === '/'){
-    res.end('Welcome to our home page');
+    res.end('Home Page');
 }
-
 if(req.url === '/about'){
-  res.end('Here is our short history');  
+    res.end('About page');
 }
-res.end( ` <h1>Oops! </h1>
-<p> We cant find the page you are looking for </p>
-<a href ="/"> back home </a> `)
+res.end('Error Page');
+
 }
 )
-
-
-
-
-server.listen(5000,)
+server.listen(5000,()=>{
+    console.log('server is listening');
+})
